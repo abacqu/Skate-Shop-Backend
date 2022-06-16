@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Depemdencies
 const express = require('express');
 const app = express();
@@ -35,3 +36,7 @@ app.get('/', (req, res) => {
 
 // Listener
 app.listen(PORT, () => console.log(`Express is listening on port ${PORT}`))
+=======
+//Skate Boys
+// Express server
+>>>>>>> master
