@@ -1,7 +1,7 @@
 ///////// DEPENDENCIES //////////
 const express = require('express');
 const Board = require('../models/board');
-const projects = require("./projects.json");
+const finishedBoards = require('../boards.json');
 
 const router = express.Router();
 
@@ -16,9 +16,10 @@ router.get('/', (req, res) => {
 })
 
 
-router.get("/projects", (req, res) => {
+router.get("/finishedboards", (req, res) => {
     // send projects via JSON
-    res.json(projects);
+    console.log('???');
+    res.json(finishedBoards);
 });
 
 
