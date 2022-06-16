@@ -1,10 +1,12 @@
-<<<<<<< HEAD
-// Depemdencies
+// Dependencies
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const cors = require('cors');
+
+// Import JSON files
+const projects = require("./projects.json");
 
 // Config App settings
 require('dotenv').config();
@@ -26,17 +28,5 @@ app.use(express.json());
 
 
 
-// Routes
-app.get('/', (req, res) => {
-    res.send('hello world')
-})
-
-
-
-
 // Listener
 app.listen(PORT, () => console.log(`Express is listening on port ${PORT}`))
-=======
-//Skate Boys
-// Express server
->>>>>>> master
