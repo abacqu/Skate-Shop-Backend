@@ -6,7 +6,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 
 // Import JSON files
-const projects = require("./projects.json");
+const finishedBoards = require("../boards.json");
 
 // Config App settings
 require('dotenv').config();
