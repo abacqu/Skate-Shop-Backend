@@ -4,9 +4,10 @@ const app = express();
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const cors = require('cors');
+const boardsController = require('./controllers/boards');
 
 // Import JSON files
-const projects = require("./projects.json");
+const finishedBoards = require("./boards.json");
 
 // Config App settings
 require('dotenv').config();
@@ -25,6 +26,7 @@ mongoose.connection
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
+app.use('/', boardsController);
 
 
 

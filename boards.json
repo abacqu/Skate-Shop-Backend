@@ -1,0 +1,18 @@
+[
+  {
+    "name": "board1",
+    "wheel": "blue wheel",
+    "truck": "medium truck",
+    "bearing": "good bearing",
+    "image": "image url",
+    "price": 45
+  },
+  {
+    "name": "board2",
+    "wheel": "green wheel",
+    "truck": "small truck",
+    "bearing": "mid bearing",
+    "image": "image url 2",
+    "price": 40
+  }
+]
