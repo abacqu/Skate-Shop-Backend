@@ -6,7 +6,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 
 // Import JSON files
-const finishedBoards = require("../boards.json");
+const finishedBoards = require('./controllers/boards');
 
 // Config App settings
 require('dotenv').config();
@@ -25,6 +25,7 @@ mongoose.connection
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
+app.use('/', finishedBoards);
 
 
 

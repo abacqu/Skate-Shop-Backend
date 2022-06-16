@@ -18,6 +18,7 @@ router.get('/', (req, res) => {
 
 router.get("/finishedboards", (req, res) => {
     // send projects via JSON
+    console.log('???');
     res.json(finishedBoards);
 });
 
