@@ -1,231 +1,222 @@
 [
-    {
-      "board": { 
+  {
+    "board": {
       "name": "board1",
       "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/BQ4F155-1_small.jpg?v=1653525981",
       "price": 50
-      },
-      "wheel": {
-        "name": "wheel1",
-        "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/ccs-skateboard-wheels-52mm-white_small.jpg?v=1614999048",
-        "price": 15
     },
-      "truck": {
+    "wheel": {
+      "name": "wheel1",
+      "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/ccs-skateboard-wheels-52mm-white_small.jpg?v=1614999048",
+      "price": 15
+    },
+    "truck": {
       "name": "truck1",
       "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/ccs-skateboard-trucks-raw-1_2_small.jpg?v=1614999036",
       "price": 10
-      }, 
-      "bearing": {
-        "name": "bearing1",
-        "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/bronson-raws-skateboard-bearings-new1_small.jpg?v=1614998534",
-        "price": 25 
-    }
-  },
-    {
-  
-      "board": { 
-      "name": "board2",
-      "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/099451252816-c_small.jpg?v=1652317124",
-      "price": 55
-      },
-      "wheel": {
-        "name": "wheel2",
-        "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/spitfire-bighead-skateboard-wheels-52mm-1_small.jpg?v=1615010670",
-        "price": 14
     },
-      "truck": {
-      "name": "truck2",
-      "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/BQ4AFD6-1_small.jpg?v=1652917209",
-      "price": 12
-      }, 
-      "bearing": {
-        "name": "bearing2",
-        "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/AQ37895-1_small.jpg?v=1615000480",
-        "price": 23 
+    "bearing": {
+      "name": "bearing1",
+      "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/bronson-raws-skateboard-bearings-new1_small.jpg?v=1614998534",
+      "price": 25
     }
   },
   {
-  
-    "board": { 
-    "name": "board3",
-    "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/BQ4F17D-c_small.jpg?v=1653525992",
-    "price": 62
+    "board": {
+      "name": "board2",
+      "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/099451252816-c_small.jpg?v=1652317124",
+      "price": 55
+    },
+    "wheel": {
+      "name": "wheel2",
+      "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/spitfire-bighead-skateboard-wheels-52mm-1_small.jpg?v=1615010670",
+      "price": 14
+    },
+    "truck": {
+      "name": "truck2",
+      "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/BQ4AFD6-1_small.jpg?v=1652917209",
+      "price": 12
+    },
+    "bearing": {
+      "name": "bearing2",
+      "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/AQ37895-1_small.jpg?v=1615000480",
+      "price": 23
+    }
+  },
+  {
+    "board": {
+      "name": "board3",
+      "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/BQ4F17D-c_small.jpg?v=1653525992",
+      "price": 62
     },
     "wheel": {
       "name": "wheel3",
       "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/888560273900-1_small.jpg?v=1654901543",
       "price": 20
-  },
+    },
     "truck": {
-    "name": "truck3",
-    "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/888560274112-1_small.jpg?v=1654901578",
-    "price": 21
-    }, 
+      "name": "truck3",
+      "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/888560274112-1_small.jpg?v=1654901578",
+      "price": 21
+    },
     "bearing": {
       "name": "bearing3",
       "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/193172161881-1_small.jpg?v=1615004564",
-      "price": 19 
-  }
+      "price": 19
+    }
   },
   {
-  
-    "board": { 
-    "name": "board4",
-    "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/BQ4F154-c_small.jpg?v=1653525962",
-    "price": 48
+    "board": {
+      "name": "board4",
+      "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/BQ4F154-c_small.jpg?v=1653525962",
+      "price": 48
     },
     "wheel": {
       "name": "wheel4",
       "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/888560166004-1_small.jpg?v=1615010754",
       "price": 17
-  },
+    },
     "truck": {
-    "name": "truck4",
-    "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/193172322060-1_small.jpg?v=1652317041",
-    "price": 14
-    }, 
+      "name": "truck4",
+      "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/193172322060-1_small.jpg?v=1652317041",
+      "price": 14
+    },
     "bearing": {
       "name": "bearing4",
       "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/BQ49CE2-1_small.jpg?v=1653426003",
-      "price": 21 
-  }
+      "price": 21
+    }
   },
   {
-  
-    "board": { 
-    "name": "board5",
-    "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/BQ4F151-1_small.jpg?v=1653525963",
-    "price": 58
+    "board": {
+      "name": "board5",
+      "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/BQ4F151-1_small.jpg?v=1653525963",
+      "price": 58
     },
     "wheel": {
       "name": "wheel5",
       "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/BQ05DD3-1_small.jpg?v=1621499142",
       "price": 16
-  },
+    },
     "truck": {
-    "name": "truck5",
-    "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/888560260665-1_small.jpg?v=1647047442",
-    "price": 11
-    }, 
+      "name": "truck5",
+      "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/888560260665-1_small.jpg?v=1647047442",
+      "price": 11
+    },
     "bearing": {
       "name": "bearing5",
       "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/193172281138-1_small.jpg?v=1642184539",
-      "price": 18 
-  }
+      "price": 18
+    }
   },
   {
-  
-    "board": { 
-    "name": "board6",
-    "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/888560267398-1_small.jpg?v=1649287363",
-    "price": 59
+    "board": {
+      "name": "board6",
+      "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/888560267398-1_small.jpg?v=1649287363",
+      "price": 59
     },
     "wheel": {
       "name": "wheel5",
       "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/BQ05DD3-1_small.jpg?v=1621499142",
       "price": 16
-  },
+    },
     "truck": {
-    "name": "truck5",
-    "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/888560260665-1_small.jpg?v=1647047442",
-    "price": 11
-    }, 
+      "name": "truck5",
+      "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/888560260665-1_small.jpg?v=1647047442",
+      "price": 11
+    },
     "bearing": {
       "name": "bearing5",
       "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/193172281138-1_small.jpg?v=1642184539",
-      "price": 18 
-  }
+      "price": 18
+    }
   },
   {
-  
-    "board": { 
-    "name": "board7",
-    "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/BQ4FB90-c_small.jpg?v=1654901419",
-    "price": 59
+    "board": {
+      "name": "board7",
+      "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/BQ4FB90-c_small.jpg?v=1654901419",
+      "price": 59
     },
     "wheel": {
       "name": "wheel3",
       "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/888560273900-1_small.jpg?v=1654901543",
       "price": 16
-  },
+    },
     "truck": {
-    "name": "truck4",
-    "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/193172322060-1_small.jpg?v=1652317041",
-    "price": 11
-    }, 
+      "name": "truck4",
+      "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/193172322060-1_small.jpg?v=1652317041",
+      "price": 11
+    },
     "bearing": {
       "name": "bearing4",
       "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/BQ49CE2-1_small.jpg?v=1653426003",
-      "price": 18 
-  }
+      "price": 18
+    }
   },
   {
-  
-    "board": { 
-    "name": "board8",
-    "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/BQ4FB92-1_small.jpg?v=1654901428",
-    "price": 61
+    "board": {
+      "name": "board8",
+      "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/BQ4FB92-1_small.jpg?v=1654901428",
+      "price": 61
     },
     "wheel": {
       "name": "wheel1",
       "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/ccs-skateboard-wheels-52mm-white_small.jpg?v=1614999048",
       "price": 15
-  },
+    },
     "truck": {
-    "name": "truck4",
-    "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/193172322060-1_small.jpg?v=1652317041",
-    "price": 11
-    }, 
+      "name": "truck4",
+      "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/193172322060-1_small.jpg?v=1652317041",
+      "price": 11
+    },
     "bearing": {
       "name": "bearing1",
       "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/bronson-raws-skateboard-bearings-new1_small.jpg?v=1614998534",
-      "price": 25 
-  }
+      "price": 25
+    }
   },
   {
-  
-    "board": { 
-    "name": "board9",
-    "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/BQ4CC34-c_small.jpg?v=1652917586",
-    "price": 64
+    "board": {
+      "name": "board9",
+      "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/BQ4CC34-c_small.jpg?v=1652917586",
+      "price": 64
     },
     "wheel": {
       "name": "wheel1",
       "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/ccs-skateboard-wheels-52mm-white_small.jpg?v=1614999048",
       "price": 15
-  },
+    },
     "truck": {
-    "name": "truck3",
-    "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/888560274112-1_small.jpg?v=1654901578",
-    "price": 21
-    }, 
+      "name": "truck3",
+      "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/888560274112-1_small.jpg?v=1654901578",
+      "price": 21
+    },
     "bearing": {
       "name": "bearing1",
       "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/bronson-raws-skateboard-bearings-new1_small.jpg?v=1614998534",
-      "price": 25 
-  }
+      "price": 25
+    }
   },
   {
-  
-    "board": { 
-    "name": "board10",
-    "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/BQ4CC34-c_small.jpg?v=1652917586",
-    "price": 64
+    "board": {
+      "name": "board10",
+      "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/BQ4CC34-c_small.jpg?v=1652917586",
+      "price": 64
     },
     "wheel": {
       "name": "wheel1",
       "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/ccs-skateboard-wheels-52mm-white_small.jpg?v=1614999048",
       "price": 15
-  },
+    },
     "truck": {
-    "name": "truck3",
-    "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/193172322060-1_small.jpg?v=1652317041",
-    "price": 11
-    }, 
+      "name": "truck3",
+      "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/193172322060-1_small.jpg?v=1652317041",
+      "price": 11
+    },
     "bearing": {
       "name": "bearing1",
       "image": "https://cdn.shopify.com/s/files/1/0519/1388/3831/products/AQ37895-1_small.jpg?v=1615000480",
-      "price": 23 
+      "price": 23
+    }
   }
-  }
-  ] 
+]
