@@ -6,7 +6,8 @@ const boardSchema = new mongoose.Schema({
     truck: { type: String},
     bearing: { type: String},
     image: { type: String},
-    price: { type: Number}
+    price: { type: Number},
+    width: { type: String }
 });
 
 const Board = mongoose.model('Board', boardSchema);
