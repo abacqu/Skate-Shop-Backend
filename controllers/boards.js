@@ -42,6 +42,16 @@ router.get("/all", async (req, res) => {
 //     }
 // });
 
+// Delete
+
+router.delete("/all/:id", async (req, res) => {
+    try {
+        res.json(await Build.findByIdAndRemove(req.params.id));
+    } catch (error) {
+        res.status(400).json(error);
+    }
+});
+
 
 
 
