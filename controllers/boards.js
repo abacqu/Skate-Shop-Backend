@@ -2,9 +2,10 @@
 const express = require('express');
 const Board = require('../models/board');
 const finishedBoards = require('../boards.json');
-const trucks = require('../trucks');
-const wheels = require('../wheels');
-const bearings = require('../bearings');
+const trucks = require('../models/truck');
+const wheels = require('../models/wheel');
+const bearings = require('../models/bearing');
+const Build = require('../models/build');
 
 const router = express.Router();
 
@@ -23,19 +24,25 @@ router.get("/presets", (req, res) => {
     res.json(finishedBoards);
 });
 
-router.put("/modify", (req, res) => {
-    // console.log(finishedBoards, trucks, bearings, wheels);
-    index = wheels.some(w => w.id === req.body.wheelid);
-    trucks.id = req.body.truckid;
-    bearings.id = req.body.bearingid;
-    finishedBoards.name = req.body.boardname;
-    finishedBoards.width = req.body.width;
+router.get("/all", async (req, res) => {
+    try {
 
-    // wheel_img = wheels;
-
-    console.log(index);
-    res.json(req.body);
+        const builds = await Build.find({}).populate('boardId bearingId truckId wheelId');
+        res.json(builds);
+    } catch (error) {
+        res.status(400).json(error);
+    }
 });
+
+// router.post("/all", async (req, res) => {
+//     try {
+//         res.json(await Board.create(req.body));
+//     } catch (error) {
+//         res.status(400).json(error);
+//     }
+// });
+
+
 
 
 module.exports = router;
