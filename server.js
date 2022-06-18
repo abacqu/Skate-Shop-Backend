@@ -19,7 +19,7 @@ mongoose.connect(MONGODB_URL)
 // MONGODB status
 mongoose.connection
 .on('connected', () => console.log('Connected to MongoDB'))
-.on('error', () => console.log('Error with MongoDB' + err.message))
+.on('error', (err) => console.log('Error with MongoDB' + err.message))
 
 // Middleware
 app.use(cors());

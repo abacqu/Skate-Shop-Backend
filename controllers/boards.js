@@ -2,7 +2,7 @@
 const express = require('express');
 const Board = require('../models/board');
 const finishedBoards = require('../boards.json');
-const trucks = require('../trucks');
+const trucks = require('../models/truck');
 const wheels = require('../wheels');
 const bearings = require('../bearings');
 
@@ -21,6 +21,16 @@ router.get('/', (req, res) => {
 
 router.get("/presets", (req, res) => {
     res.json(finishedBoards);
+});
+
+router.get("/all", async (req, res) => {
+    console.log('hello');
+    try {
+        // console.log( Board.findById("").json);
+        res.json(await Truck.findById("62ad38471e7890c761872809"));
+    } catch (error) {
+        res.status(400).json(error);
+    }
 });
 
 router.put("/modify", (req, res) => {
