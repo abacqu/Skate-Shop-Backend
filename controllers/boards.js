@@ -6,6 +6,7 @@ const Trucks = require('../models/truck');
 const Wheels = require('../models/wheel');
 const Bearings = require('../models/bearing');
 const Build = require('../models/build');
+const Custom = require('../models/custom');
 
 const router = express.Router();
 
@@ -34,13 +35,15 @@ router.get("/all", async (req, res) => {
     }
 });
 
+
 router.get("/create", async (req, res) => {
     try {
         const boards = await Board.find({});
         const trucks = await Trucks.find({});
         const wheels = await Wheels.find({});
         const bearings = await Bearings.find({});
-        res.json(boards + trucks + wheels + bearings); 
+        const allPieces = [trucks, boards, wheels, bearings]
+        res.json(allPieces); 
     } catch (error) {
         res.status(400).json(error);
     }
@@ -59,6 +62,14 @@ router.post('/create', async (req, res) => {
         res.status(400).json(error);
     }
 });
+
+router.post('/custom', async (req, res) => {
+    try {
+        res.json(await Custom.create(req.body));
+    } catch (error) {
+        res.status(400).json(error);
+    }
+})
 
 router.post('/cart', async (req, res) => {
     try {
@@ -81,6 +92,7 @@ router.post('/cart', async (req, res) => {
     }
 
 });
+
 
 router.post('/checkout', async (req, res) => {
     if(req.body.premade) {
