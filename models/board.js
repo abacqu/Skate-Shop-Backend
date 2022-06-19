@@ -5,7 +5,7 @@ const boardSchema = new mongoose.Schema({
     name: { type: String},
     bigImg: { type: String},
     img: { type: String },
-    price: { type: String},
+    price: { type: Number},
     width: { type: Array }
 });
 
