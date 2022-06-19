@@ -6,6 +6,7 @@ const Trucks = require('../models/truck');
 const Wheels = require('../models/wheel');
 const Bearings = require('../models/bearing');
 const Build = require('../models/build');
+const Custom = require('../models/custom');
 
 const router = express.Router();
 
@@ -34,17 +35,14 @@ router.get("/all", async (req, res) => {
     }
 });
 
+
 router.get("/create", async (req, res) => {
     try {
         const boards = await Board.find({});
         const trucks = await Trucks.find({});
         const wheels = await Wheels.find({});
         const bearings = await Bearings.find({});
-        const hello = boards ;
-        // ;
-        console.log('?????');
         const things = [trucks, boards, wheels, bearings]
-        console.log(testmethod(boards, trucks, wheels, bearings));
         res.json(things); 
     } catch (error) {
         res.status(400).json(error);
@@ -64,6 +62,14 @@ router.post('/create', async (req, res) => {
         res.status(400).json(error);
     }
 });
+
+router.post('/custom', async (req, res) => {
+    try {
+        res.json(await Custom.create(req.body));
+    } catch (error) {
+        res.status(400).json(error);
+    }
+})
 
 router.post('/cart', async (req, res) => {
     try {
@@ -87,14 +93,6 @@ router.post('/cart', async (req, res) => {
 
 });
 
-function testmethod(testjson, b, w, bo) {
-    console.log('???');
-    testjson = JSON.stringify(testjson);
-    const tt = JSON.parse(testjson);
-    b = JSON.stringify(b[0]._id);
-    const id = b.split('"')[1];
-    console.log(id);
-}
 
 router.post('/checkout', async (req, res) => {
     if(req.body.premade) {
