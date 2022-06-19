@@ -42,8 +42,8 @@ router.get("/create", async (req, res) => {
         const trucks = await Trucks.find({});
         const wheels = await Wheels.find({});
         const bearings = await Bearings.find({});
-        const things = [trucks, boards, wheels, bearings]
-        res.json(things); 
+        const allPieces = [trucks, boards, wheels, bearings]
+        res.json(allPieces); 
     } catch (error) {
         res.status(400).json(error);
     }
