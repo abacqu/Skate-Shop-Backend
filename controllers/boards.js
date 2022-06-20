@@ -63,13 +63,40 @@ router.post('/create', async (req, res) => {
     }
 });
 
+// create basic custom
+
 router.post('/custom', async (req, res) => {
     try {
         res.json(await Custom.create(req.body));
     } catch (error) {
         res.status(400).json(error);
     }
-})
+});
+
+// Update basic custom
+
+router.put('/custom/:id', async (req, res) => {
+    try {
+        res.json(await Custom.findByIdAndUpdate(
+            req.params.id, 
+            req.body, 
+            { new: true }
+        ));
+    } catch (error) {
+        console.log('error: ', error);
+        res.json({error: 'something went wrong - check console'});
+    }
+});
+
+// Deletes basic custom
+
+router.delete("/custom/:id", async (req, res) => {
+    try {
+      res.json(await Custom.findByIdAndRemove(req.params.id));
+    } catch (error) {
+      res.status(400).json(error);
+    }
+  });
 
 router.post('/cart', async (req, res) => {
     try {
