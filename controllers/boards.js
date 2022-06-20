@@ -56,7 +56,7 @@ router.post('/create', async (req, res) => {
         const truckChoice = await Trucks.findById(req.body.truckId);
         const wheelChoice = await Wheels.findById(req.body.wheelId);
         const bearChoice = await Bearings.findById(req.body.bearingId);
-        res.json(boardChoice + boardWidth + truckChoice + wheelChoice + bearChoice);
+        res.json([boardChoice, boardWidth, truckChoice, wheelChoice, bearChoice]);
     }
     catch (error) {
         res.status(400).json(error);
@@ -75,16 +75,18 @@ router.post('/cart', async (req, res) => {
     try {
         if(req.body.premade) {
             const premade = await Build.findById(req.body.premadeId);
-            res.json(premade + (premade.price * req.body.quantity));
+            res.json([premade, (premade.price * req.body.quantity)]);
         } 
         else {
             const board = await Board.findById(req.body.boardId);
             const wheel = await Wheels.findById(req.body.wheelId);
             const truck = await Trucks.findById(req.body.truckId);
             const bear = await Bearings.findById(req.body.bearingId);
+
+            
             const price = (board.price + wheel.price + truck.price + bear.price) * req.body.quantity;
 
-            res.json(board + wheel + truck + bear + price);
+            res.json([board, wheel, truck, bear, price]);
         }
     }
     catch (error) {
