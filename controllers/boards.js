@@ -85,13 +85,6 @@ router.post('/custom', async (req, res) => {
     }
 });
 
-router.post('/all', async (req, res) => {
-    try {
-        res.json(await Board.create(req.body));
-    } catch (error) {
-        res.status(400).json(error);
-    }
-});
 
 // Update basic custom
 
