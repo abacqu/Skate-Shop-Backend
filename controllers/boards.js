@@ -85,6 +85,14 @@ router.post('/custom', async (req, res) => {
     }
 });
 
+router.post('/all', async (req, res) => {
+    try {
+        res.json(await Board.create(req.body));
+    } catch (error) {
+        res.status(400).json(error);
+    }
+});
+
 // Update basic custom
 
 router.put('/custom/:id', async (req, res) => {
@@ -117,7 +125,7 @@ router.delete("/custom/:id", async (req, res) => {
         if(req.body.premade) {
             const premade = await Build.findById(req.body.premade);
 
-            const cart = await Cart.create({buildId: req.body.premade}); 
+            const cart = await Cart.create({buildId: req.body.premade, quantity: req.body.quantity, price: (premade.price * req.body.quantity)}); 
             
             
             res.json([await cart.populate(
