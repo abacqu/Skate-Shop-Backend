@@ -115,16 +115,10 @@ router.delete("/custom/:id", async (req, res) => {
   router.post('/cart', async (req, res) => {
     try {
         if(req.body.premade) {
-            console.log('hello i is here');
             const premade = await Build.findById(req.body.premade);
 
             const cart = await Cart.create({buildId: req.body.premade}); 
-            console.log('premade id is: '+premade._id);
-            // const cart = await Cart.create({buildId: premade._id});
-           
-            // console.log(JSON.stringify(await cart.populate('buildId')));
-
-    
+            
             
             res.json([await cart.populate(
                 'buildId'
