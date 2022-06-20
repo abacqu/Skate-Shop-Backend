@@ -7,6 +7,7 @@ const Wheels = require('../models/wheel');
 const Bearings = require('../models/bearing');
 const Build = require('../models/build');
 const Custom = require('../models/custom');
+const Cart = require('../models/cart');
 
 const router = express.Router();
 
@@ -63,6 +64,17 @@ router.post('/create', async (req, res) => {
     }
 });
 
+// get route for basic custom
+
+router.get("/custom", async (req, res) => {
+    try {
+        const customs = await Custom.find({});
+        res.json(customs);
+    } catch (error) {
+        res.status(400).json(error);
+    }
+});
+
 // create basic custom
 
 router.post('/custom', async (req, res) => {
@@ -98,11 +110,31 @@ router.delete("/custom/:id", async (req, res) => {
     }
   });
 
-router.post('/cart', async (req, res) => {
+// Creates Cart Item
+
+  router.post('/cart', async (req, res) => {
     try {
         if(req.body.premade) {
-            const premade = await Build.findById(req.body.premadeId);
-            res.json([premade, (premade.price * req.body.quantity)]);
+            console.log('hello i is here');
+            const premade = await Build.findById(req.body.premade);
+
+            const cart = await Cart.create({buildId: req.body.premade}); 
+            console.log('premade id is: '+premade._id);
+            // const cart = await Cart.create({buildId: premade._id});
+           
+            // console.log(JSON.stringify(await cart.populate('buildId')));
+
+    
+            
+            res.json([await cart.populate(
+                'buildId'
+                // populate: 
+                // {
+                //     path: 'boardId',
+                //     model: 'Board'
+                // }
+            )
+        ]);
         } 
         else {
             const board = await Board.findById(req.body.boardId);
@@ -121,6 +153,31 @@ router.post('/cart', async (req, res) => {
     }
 
 });
+
+//Updates Cart Item
+
+router.put('/cart/:id', async (req, res) => {
+    try {
+        res.json(await Cart.findByIdAndUpdate(
+            req.params.id, 
+            req.body, 
+            { new: true }
+        ));
+    } catch (error) {
+        console.log('error: ', error);
+        res.json({error: 'something went wrong - check console'});
+    }
+});
+
+// Deletes Cart Item
+
+router.delete("/cart/:id", async (req, res) => {
+    try {
+      res.json(await Cart.findByIdAndRemove(req.params.id));
+    } catch (error) {
+      res.status(400).json(error);
+    }
+  });
 
 
 router.post('/checkout', async (req, res) => {
