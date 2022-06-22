@@ -111,7 +111,18 @@ router.delete("/custom/:id", async (req, res) => {
     }
   });
 
-// Creates Cart Item
+// Cart Get Route
+
+router.get("/cart", async (req, res) => {
+    try {
+        const cart = await Cart.find({});
+        res.json(cart);
+    } catch (error) {
+        res.status(400).json(error);
+    }
+});
+
+  // Creates Cart Item
 
   router.post('/cart', async (req, res) => {
     try {
