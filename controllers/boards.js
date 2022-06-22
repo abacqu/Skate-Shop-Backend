@@ -115,7 +115,13 @@ router.delete("/custom/:id", async (req, res) => {
 
 router.get("/cart", async (req, res) => {
     try {
-        const cart = await Cart.find({}).populate('buildId');
+        const cart = await Cart.find({}).populate({
+            path: 'buildId', 
+            populate: { 
+            path: 'boardId', 
+            model: 'Board'
+        }
+        });
         res.json(cart);
     } catch (error) {
         res.status(400).json(error);
