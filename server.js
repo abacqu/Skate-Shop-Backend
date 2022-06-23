@@ -9,6 +9,7 @@ const admin = require('firebase-admin')
 
 // Import JSON files
 const finishedBoards = require('./controllers/boards');
+const { apps } = require('firebase-admin');
 
 // Config App settings
 require('dotenv').config();
@@ -31,7 +32,6 @@ mongoose.connection
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
-app.use('/', finishedBoards);
 
 // Authorization Middleware
 app.use(async(req, res, next) => {
@@ -51,13 +51,22 @@ app.use(async(req, res, next) => {
   next();
 });
 
+
+
 function isAuthenticated(req, res, next) {
   if(!req.user) { return res.status(401).json({message: 'you must be logged in' });
 } else {
-    return next();
-  }
+  return next();
 }
+}
+app.get('/', isAuthenticated, (req, res) => {
+  res.send('hello world')
+})
+
 app.use(isAuthenticated, finishedBoards);
+
+
+
 
 
 

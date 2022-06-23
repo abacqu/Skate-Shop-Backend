@@ -21,9 +21,9 @@ const router = express.Router();
 
 // INDEX
 
-router.get('/', (req, res) => {
-    res.send('hello world')
-})
+// router.get('/', (req, res) => {
+//     res.send('hello world')
+// })
 
 
 router.get("/all", async (req, res) => {
