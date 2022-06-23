@@ -8,7 +8,7 @@ const cartRouter = express.Router();
 
 // Cart Get Route
 
-router.get("/cart", async (req, res) => {
+cartRouter.get("/cart", async (req, res) => {
     try {
         const cart = await Cart.find({}).populate({
             path: 'buildId', 
@@ -25,7 +25,7 @@ router.get("/cart", async (req, res) => {
 
   // Creates Cart Item
 
-  router.post('/cart', async (req, res) => {
+  cartRouter.post('/cart', async (req, res) => {
     try {
         if(req.body.premade) {
             const premade = await Build.findById(req.body.premade);
