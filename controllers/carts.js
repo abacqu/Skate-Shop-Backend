@@ -8,24 +8,29 @@ const cartRouter = express.Router();
 
 // Cart Get Route
 
-cartRouter.get("/cart", async (req, res) => {
+router.get("/cart", async (req, res) => {
     try {
-        // const googleId = req.user.uid;
-        const cart = await Cart.find({ });
+        const cart = await Cart.find({}).populate({
+            path: 'buildId', 
+            populate: { 
+            path: 'boardId', 
+            model: 'Board'
+        }
+        });
         res.json(cart);
     } catch (error) {
         res.status(400).json(error);
     }
 });
 
-//   Creates Cart Item
+  // Creates Cart Item
 
-  cartRouter.post('/cart', async (req, res) => {
+  router.post('/cart', async (req, res) => {
     try {
-        console.log(req.user);
         if(req.body.premade) {
             const premade = await Build.findById(req.body.premade);
-            const cart = await Cart.create({ googleId: req.user.uid, buildId: req.body.premade, quantity: req.body.quantity, price: (premade.price * req.body.quantity)}); 
+
+            const cart = await Cart.create({buildId: req.body.premade, quantity: req.body.quantity, price: (premade.price * req.body.quantity)}); 
             
             
             res.json([await cart.populate(
