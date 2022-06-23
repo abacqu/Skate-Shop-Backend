@@ -4,10 +4,8 @@ const app = express();
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const cors = require('cors');
-const cartRouter = require('./controllers/carts');
-
-// Import JSON files
-const finishedBoards = require('./controllers/boards');
+const cartController = require('./controllers/carts');
+const boardController = require('./controllers/boards');
 
 // Config App settings
 require('dotenv').config();
@@ -26,7 +24,8 @@ mongoose.connection
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
-app.use('/', finishedBoards);
+app.use('/', boardController);
+app.use('/cart', cartController);
 
 
 
