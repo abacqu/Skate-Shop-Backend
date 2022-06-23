@@ -37,12 +37,31 @@ app.use('/', finishedBoards);
 app.use(async(req, res, next) => {
   const token = req.get('Authorization')
   if(token) {
-    // console.log(token)
-    const user = await admin.auth().verifyIdToken(token.replace('Bearer ', ''));
-    console.log(user);
+    try {
+      const user = await admin.auth().verifyIdToken(token.replace('Bearer ', ''));
+      req.user = user;
+      console.log(user)
+      
+    } catch (error) {
+      req.user = null;
+    }
+  } else {
+    req.user = null;
   }
   next();
-})
+});
+
+function isAuthenticated(req, res, next) {
+  if(!req.user) { return res.status(401).json({message: 'you must be logged in' });
+} else {
+    return next();
+  }
+}
+app.use(isAuthenticated, finishedBoards);
+
+
+
+
 
 
 

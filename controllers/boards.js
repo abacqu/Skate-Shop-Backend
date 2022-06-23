@@ -2,6 +2,8 @@
 const express = require('express');
 const Board = require('../models/board');
 const finishedBoards = require('../boards.json');
+const admin = require('firebase-admin')
+
 const Trucks = require('../models/truck');
 const Wheels = require('../models/wheel');
 const Bearings = require('../models/bearing');
@@ -9,7 +11,9 @@ const Build = require('../models/build');
 const Custom = require('../models/custom');
 const Cart = require('../models/cart');
 
+
 const router = express.Router();
+
 
 
 
@@ -22,13 +26,8 @@ router.get('/', (req, res) => {
 })
 
 
-router.get("/presets", (req, res) => {
-    res.json(finishedBoards);
-});
-
 router.get("/all", async (req, res) => {
     try {
-
         const builds = await Build.find({}).populate('boardId bearingId truckId wheelId');
         res.json(builds);
     } catch (error) {
@@ -115,7 +114,8 @@ router.delete("/custom/:id", async (req, res) => {
 
 router.get("/cart", async (req, res) => {
     try {
-        const cart = await Cart.find({});
+        // const googleId = req.user.uid;
+        const cart = await Cart.find({ });
         res.json(cart);
     } catch (error) {
         res.status(400).json(error);
@@ -126,10 +126,10 @@ router.get("/cart", async (req, res) => {
 
   router.post('/cart', async (req, res) => {
     try {
+        console.log(req.user);
         if(req.body.premade) {
             const premade = await Build.findById(req.body.premade);
-
-            const cart = await Cart.create({buildId: req.body.premade, quantity: req.body.quantity, price: (premade.price * req.body.quantity)}); 
+            const cart = await Cart.create({ googleId: req.user.uid, buildId: req.body.premade, quantity: req.body.quantity, price: (premade.price * req.body.quantity)}); 
             
             
             res.json([await cart.populate(
