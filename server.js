@@ -4,6 +4,7 @@ const app = express();
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const cors = require('cors');
+const cartRouter = require('./controllers/carts');
 
 // Import JSON files
 const finishedBoards = require('./controllers/boards');
@@ -25,7 +26,7 @@ mongoose.connection
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
-app.use('/', finishedBoards);
+
 
 
 
