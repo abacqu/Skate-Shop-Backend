@@ -1,13 +1,11 @@
 const express = require('express');
 const Cart = require('../models/cart');
 const Build = require('../models/build');
-// const admin = require('firebase-admin');
-
 
 const cartRouter = express.Router();
+  
 
 // Cart Get Route
-
 cartRouter.get("/cart", async (req, res) => {
     try {
         const cart = await Cart.find({}).populate({
@@ -24,7 +22,6 @@ cartRouter.get("/cart", async (req, res) => {
 });
 
   // Creates Cart Item
-
   cartRouter.post('/cart', async (req, res) => {
     try {
         if(req.body.premade) {
@@ -62,7 +59,6 @@ cartRouter.get("/cart", async (req, res) => {
 });
 
 //Updates Cart Item
-
 cartRouter.put('/cart/:id', async (req, res) => {
     try {
         res.json(await Cart.findByIdAndUpdate(
