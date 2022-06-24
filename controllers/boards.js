@@ -113,48 +113,7 @@ router.delete("/custom/:id", async (req, res) => {
 
 
 
-router.post('/checkout', async (req, res) => {
-    if(req.body.premade) {
-        const quantity = req.body.quantity;
-        const premade = await Build.findById(req.body.premade);
-        const newOrder = new Order({board: premade.boardId, wheel: premade.wheelId, truck: premade.truckId, bearing: premade.bearingId, qty: quantity});
 
-        newOrder.save(function (err) {
-            if (err) return handleError(err);
-        });
-        res.json(newOrder._id);
-    } 
-    else {
-        const board = await Board.findById(req.body.boardId);
-        const wheel = await Wheels.findById(req.body.wheelId);
-        const truck = await Trucks.findById(req.body.truckId);
-        const bearing = await Bearings.findById(req.body.bearingId);
-        const quantity = req.body.quantity;
-
-        const newOrder = new Order({board: board._id, wheel: wheel._id, truck: truck._id, bearing: bearing._id, qty: quantity});
-
-        newOrder.save(function(err) {
-            if(err) return handleError(err);
-        });
-        res.json(newOrder._id);
-    }
-});
-
-router.get('/searchOrder/:id', async (req, res) => {
-    //assuming order table exists
-    res.json(Order.findById(req.params.id));
-});
-
-
-// Delete
-
-router.delete("/all/:id", async (req, res) => {
-    try {
-        res.json(await Build.findByIdAndRemove(req.params.id));
-    } catch (error) {
-        res.status(400).json(error);
-    }
-});
 
 
 
